@@ -100,3 +100,8 @@ def caesar(text, shift):
     translation_table = str.maketrans(alphabet, shifted_alphabet)
     encrypted_text = text.translate(translation_table)
     print(encrypted_text)
+
+# Step 12
+# Now, test the caesar function by calling it with the string freeCodeCamp and the number 3 as the arguments. Assign the function call to a variable named encrypted_text.
+encrypted_text = caesar("freeCodeCamp", 3)
+print(encrypted_text)

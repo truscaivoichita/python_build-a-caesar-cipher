@@ -54,3 +54,7 @@ text = "hello world"
 # Output: The tent gave in to the bears.
 # Call the translate() method on text passing in the translation_table as the argument and assign the result to a variable named encrypted_text.
 encrypted_text = text.translate(translation_table)
+
+# Step 9
+# Now print encrypted_text to see the output in the terminal.
+print(encrypted_text)

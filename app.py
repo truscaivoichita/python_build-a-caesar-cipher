@@ -169,10 +169,19 @@
 # print(not True) # False
 # print(not False) # True
 # Use the not operator to fix the condition of the if statement so that your function returns Shift must be an integer value. when shift is not an integer.
-#
+
+# Step 19
+# In Python, bool is a subclass of int, where True behaves like 1 and False behaves like 0. This means that isinstance() treats Boolean values as integers:
+
+# Example Code
+# print(isinstance(True, int)) # True
+# print(isinstance(False, int)) # True
+# Because of this, your function currently accepts True and False as shift values.
+
+# Use the or operator to add a second condition to your if statement that checks if shift is a Boolean with isinstance(shift, bool). This way, your function also returns Shift must be an integer value. when shift is True or False.
 def caesar(text, shift):
 
-    if not isinstance(shift, int):
+    if not isinstance(shift, int) or isinstance(shift, bool):
         return 'Shift must be an integer value.'
 
     alphabet = 'abcdefghijklmnopqrstuvwxyz'

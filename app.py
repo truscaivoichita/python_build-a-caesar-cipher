@@ -15,7 +15,7 @@ alphabet = "abcdefghijklmnopqrstuvwxyz"
 # fcc = 'freeCodeCamp'
 # print(fcc[8:]) # Camp
 # Create a variable named shifted_alphabet and use the slicing syntax to assign it the portion of alphabet that starts at the index of shift. Then, call the built-in print() function to print shifted_alphabet on the terminal and look at the result.
-shifted_alphabet =  alphabet[shift:]+ alphabet[:shift]
+shifted_alphabet =  alphabet[shift:] + alphabet[:shift]
 
 # Step 4
 # As you can see from the output, the shifted alphabet starts at the letter f because shift has the value 5. But now the first five letters of the alphabet – a, b, c, d and e – are missing from the shifted alphabet, so you'll need to add them at the end of the shifted alphabet. You can use the + operator to concatenate the missing portion of the alphabet.
@@ -26,3 +26,15 @@ shifted_alphabet =  alphabet[shift:]+ alphabet[:shift]
 
 # Step 5
 # Now that you have your entire shifted alphabet, remove the print(shifted_alphabet) call.
+
+# Step 6
+# The str.maketrans() method takes two strings of equal length and returns a translation table that maps each character of the first string to the corresponding character of the second string. Each character in the translation table is stored as a Unicode ordinal, a number that uniquely identifies the character.
+
+# Example Code
+# lower_chars = 'abc'
+# upper_chars = 'ABC'
+
+# table = str.maketrans(lower_chars, upper_chars)
+# print(table) # {97: 65, 98: 66, 99: 67}
+# You'll learn more about the type of structure returned by str.maketrans() later on in the curriculum. For now, create a translation table that maps the characters in alphabet to the characters in shifted_alphabet and assign it to a variable named translation_table.
+translation_table= str.maketrans(alphabet, shifted_alphabet)

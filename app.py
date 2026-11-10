@@ -189,7 +189,18 @@
 # Add a second condition to the if statement that checks if shift is greater than 25. Remember that the logical OR operation in Python is implemented through the or operator.
 
 # Also, update the returned message to Shift must be an integer between 1 and 25.
-def caesar(text, shift):
+
+# Step 22
+# Python allows you to specify a default value for the parameters in a function, creating a function that can be called with fewer or no arguments. Here's how to create a function with a name parameter that has a default value:
+
+# Example Code
+# def greet(name='Polly'):
+    # return 'Hello ' + name
+
+# print(greet()) # Hello Polly
+# Add a third parameter named encrypt to your function and give it a default value of True.
+#
+def caesar(text, shift, encrypt=True):
 
     if not isinstance(shift, int) or isinstance(shift, bool):
         return 'Shift must be an integer value.'

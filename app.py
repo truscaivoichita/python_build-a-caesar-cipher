@@ -94,17 +94,31 @@
 # def sum(num1, num2):
     # print(num1 + num2)
 # The message to encrypt and the shift are still hardcoded in your function. Give your function two parameters named text and shift, and delete the declarations of both the text and shift variables from the caesar function body.
+# def caesar(text, shift):
+#     alphabet = 'abcdefghijklmnopqrstuvwxyz'
+#     shifted_alphabet = alphabet[shift:] + alphabet[:shift]
+#     translation_table = str.maketrans(alphabet, shifted_alphabet)
+#     encrypted_text = text.translate(translation_table)
+#     print(encrypted_text)
+
+# Step 12
+# Now, test the caesar function by calling it with the string freeCodeCamp and the number 3 as the arguments. Assign the function call to a variable named encrypted_text.
+
+# Step 13
+# Now your code is reusable. However, the caesar function prints a message on the terminal and gives back None by default. To prove it, print encrypted_text at the end of your code.
+# print(encrypted_text)
+
+# Step 14
+# In previous lessons, you learned that the return statement is used to return a value from a function, so that you can use it elsewhere in your code:
+
+# Example Code
+# def spam():
+    # return 'Spam!'
+# Remove the print(encrypted_text) call from your function. Then, delete the declaration of the encrypted_text variable and directly return text.translate(translation_table) from your function.
 def caesar(text, shift):
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     shifted_alphabet = alphabet[shift:] + alphabet[:shift]
     translation_table = str.maketrans(alphabet, shifted_alphabet)
-    encrypted_text = text.translate(translation_table)
-    print(encrypted_text)
-
-# Step 12
-# Now, test the caesar function by calling it with the string freeCodeCamp and the number 3 as the arguments. Assign the function call to a variable named encrypted_text.
-encrypted_text = caesar("freeCodeCamp", 3)
-
-# Step 13
-# Now your code is reusable. However, the caesar function prints a message on the terminal and gives back None by default. To prove it, print encrypted_text at the end of your code.
+    return text.translate(translation_table)
+encrypted_text = caesar('freeCodeCamp', 3)
 print(encrypted_text)

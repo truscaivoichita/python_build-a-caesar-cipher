@@ -161,9 +161,18 @@
 
 # Step 17
 # Replace the current condition of your if statement with an isinstance() call. Pass in shift as the first argument, and int as the second argument.
+#
+# Step 18
+# The not operator reverses a boolean value. It changes True to False and False to True:
+
+# Example Code
+# print(not True) # False
+# print(not False) # True
+# Use the not operator to fix the condition of the if statement so that your function returns Shift must be an integer value. when shift is not an integer.
+#
 def caesar(text, shift):
 
-    if isinstance(shift, int):
+    if not isinstance(shift, int):
         return 'Shift must be an integer value.'
 
     alphabet = 'abcdefghijklmnopqrstuvwxyz'

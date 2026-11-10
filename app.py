@@ -179,16 +179,23 @@
 # Because of this, your function currently accepts True and False as shift values.
 
 # Use the or operator to add a second condition to your if statement that checks if shift is a Boolean with isinstance(shift, bool). This way, your function also returns Shift must be an integer value. when shift is True or False.
-#
+
 # Step 20
 # A negative or null shift should not be accepted by your function. Therefore, after your first if statement, create another if statement that checks if shift is less than 1 and returns the string Shift must be a positive integer.
+
+# Step 21
+# As you've already verified, the shift passed to encrypt the text should be a positive integer. It cannot exceed 25 (the last index of alphabet) though.
+
+# Add a second condition to the if statement that checks if shift is greater than 25. Remember that the logical OR operation in Python is implemented through the or operator.
+
+# Also, update the returned message to Shift must be an integer between 1 and 25.
 def caesar(text, shift):
 
     if not isinstance(shift, int) or isinstance(shift, bool):
         return 'Shift must be an integer value.'
 
-    if shift < 1:
-        return "Shift must be a positive integer."
+    if shift < 1 or shift > 25:
+        return "Shift must be an integer between 1 and 25."
 
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     shifted_alphabet = alphabet[shift:] + alphabet[:shift]

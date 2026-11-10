@@ -212,6 +212,9 @@
 
 # From both new functions, return a caesar call that passes in text and shift. In decrypt, also pass False as the third argument.
 
+# Step 25
+# It's time to test the encrypt function. Using the same arguments, replace your caesar call with a call to encrypt. You'll see the same output on the terminal.
+
 def caesar(text, shift, encrypt=True):
 
     if not isinstance(shift, int) or isinstance(shift, bool):
@@ -235,5 +238,5 @@ def encrypt(text, shift):
 def decrypt(text, shift):
     return caesar(text, shift, encrypt=False)
 
-encrypted_text = caesar('freeCodeCamp', 3)
+encrypted_text = encrypt('freeCodeCamp', 3)
 print(encrypted_text)

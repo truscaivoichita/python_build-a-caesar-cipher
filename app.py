@@ -179,10 +179,16 @@
 # Because of this, your function currently accepts True and False as shift values.
 
 # Use the or operator to add a second condition to your if statement that checks if shift is a Boolean with isinstance(shift, bool). This way, your function also returns Shift must be an integer value. when shift is True or False.
+#
+# Step 20
+# A negative or null shift should not be accepted by your function. Therefore, after your first if statement, create another if statement that checks if shift is less than 1 and returns the string Shift must be a positive integer.
 def caesar(text, shift):
 
     if not isinstance(shift, int) or isinstance(shift, bool):
         return 'Shift must be an integer value.'
+
+    if shift < 1:
+        return "Shift must be a positive integer."
 
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     shifted_alphabet = alphabet[shift:] + alphabet[:shift]
